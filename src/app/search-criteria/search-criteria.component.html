@@ -1,8 +1,36 @@
-<form class="form-container">
-  <label for="genre"></label>Genre:
-  <input type="text" name="genre" id="genre" />
-  <label for="rating"></label>Rating:
-  <input type="text" name="rating" id="rating" />
-  <label for="release-year"></label>Release Year:
-  <input type="text" name="release-year" id="release-year" />
+<form #searchForm="ngForm" (ngSubmit)="emitSearchTerm (searchForm)"class="form-container" >
+
+
+  <label for="searchTerm"></label>Search:
+  <input type="text" name="searchTerm" id="searchTerm" ngModel />
+
+
+<label for="genre">Genre</label>
+
+<select name="genre" id="genre" ngModel>
+  <option *ngFor="let genre of genres?.genres" value="{{genre.id}}">{{ genre.name }}</option>
+
+</select>
+
+
+<label for="genre">Rating</label>
+
+<select name="rating" id="rating" ngModel>
+  <option value=""></option>
+  <option value="5">⭐⭐⭐⭐⭐</option>
+  <option value="4">⭐⭐⭐⭐</option>
+  <option value="3">⭐⭐⭐</option>
+  <option value="2">⭐⭐</option>
+  <option value="1">⭐</option>
+</select>
+
+
+
+
+<button>submit</button>
+
+</form>
+
+<form>
+  
 </form>

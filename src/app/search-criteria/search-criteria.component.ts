@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-search-criteria',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  constructor() { }
+  @Output() searchEvent = new EventEmitter<string>()
+
+  genres: any = []
+
+
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
+    this.getGenres()
+  }
+
+
+  emitSearchTerm = (form: NgForm) => {
+    console.log(form);
+
+
+    this.searchEvent.emit(form.form.value.searchTerm)
+    // this.searchEvent.emit(form.form.value.genre)
+    // this.searchEvent.emit(form.form.value.rating)
+
+  }
+
+  getGenres = () => {
+    this.moviesService.getGenresService().subscribe((response) => {
+      this.genres = response;
+      console.log(response)
+    })
   }
 
 }
