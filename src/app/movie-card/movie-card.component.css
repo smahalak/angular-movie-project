@@ -1,0 +1,27 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-poster {
+  margin-top: 25px;
+  height: 300px;
+}
+
+.movie-title {
+  text-align: center;
+  color: magenta;
+}
+
+.details-btn {
+  margin-top: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid lime;
+  color: lime;
+  font-weight: bolder;
+  background-color: magenta;
+}
