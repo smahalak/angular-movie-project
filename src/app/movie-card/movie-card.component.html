@@ -1,10 +1,2 @@
-<p>{{movieRef.title}}</p>
-
-<img src='image.tmdb.org/t/p/w500/'  {{movieRef.results[i].object.poster_path}} >
-
-
-
-<!-- <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt=""> -->
-
-<!-- 
-<img src='https://image.tmdb.org/t/p/w200' + movie.results[0].poster_path> -->
+<p>{{ movieRef.title }}</p>
+<img src="https://image.tmdb.org/t/p/w500{{ movieRef.poster_path }}" alt="" />
