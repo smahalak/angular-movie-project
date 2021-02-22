@@ -27,4 +27,19 @@ export class MoviesListComponent implements OnInit {
     })
   }
 
+
+
+  onSubmit = (searchTerm: string): void => {
+
+
+    this.moviesService.searchTitle(searchTerm).subscribe((response: any) => {
+      console.log(response);
+
+      this.movieData = response;
+
+    })
+  }
+
+
+
 }
