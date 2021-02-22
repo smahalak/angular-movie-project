@@ -1,4 +1,7 @@
-<app-search-criteria (searchEvent)="onSubmit($event)" ></app-search-criteria>
+<app-search-criteria
+  (searchEvent)="onSubmit($event)"
+  (genreEvent)="onGenreSearch($event)"
+></app-search-criteria>
 <ul class="card-container">
   <app-movie-card
     *ngFor="let movie of movieData?.results; index as i"
