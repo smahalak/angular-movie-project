@@ -1,4 +1,37 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 150px;
+  background-image: url("src/assets/static-tv-header-background.jpeg");
+  background-size: cover;
+}
+
+.header-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 38%;
+  /* background-color: lime;
+  border: 2px solid yellow;
+  color: magenta; */
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: rgba(228, 233, 237, 0.8);
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 350px;
+  }
+
+  .header-btn {
+    margin-top: 15%;
+    z-index: 1;
+  }
 }

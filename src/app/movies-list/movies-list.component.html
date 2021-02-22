@@ -1,9 +1,7 @@
 <app-search-criteria></app-search-criteria>
-<ul>
+<ul class="card-container">
   <app-movie-card
     *ngFor="let movie of movieData?.results; index as i"
     [movieRef]="movie"
   ></app-movie-card>
 </ul>
-
-
