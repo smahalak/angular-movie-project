@@ -5,13 +5,14 @@
 }
 
 .watchLater {
-  background-color: red;
+  background-color: lime;
+  border-radius: 50%;
 }
-
 
 .movie-card {
   margin-top: 1em;
   display: flex;
+  max-width: 200px;
 
   /* flex-direction: column; */
   /* justify-content: center; */
@@ -43,7 +44,7 @@
 }
 
 .details-container {
-  color: red;
+  color: magenta;
   background-color: black;
 }
 
@@ -130,7 +131,7 @@
 
 .poster-container .heart {
   position: absolute;
-  color: white;
+  color: magenta;
   z-index: 2;
   bottom: 0.2em;
   right: 0.5em;

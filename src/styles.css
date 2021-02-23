@@ -17,3 +17,23 @@ label {
 body {
   background-image: url("src/assets/static-background.jpeg");
 }
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+@media (min-width: 780px) {
+  .card-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+}

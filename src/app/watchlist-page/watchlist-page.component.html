@@ -1,3 +1,8 @@
-<app-movie-card *ngFor="let movie of watchList" [movieRef]='movie' (watchListEvent)="onWatch($event)" [watchListRef]="watchList" ></app-movie-card>
-
-
+<ul class="card-container">
+  <app-movie-card
+    *ngFor="let movie of watchList"
+    [movieRef]="movie"
+    (watchListEvent)="onWatch($event)"
+    [watchListRef]="watchList"
+  ></app-movie-card>
+</ul>
