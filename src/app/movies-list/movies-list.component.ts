@@ -12,7 +12,7 @@ export class MoviesListComponent implements OnInit {
 
   // movies: any[] = [];
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
     this.getPopular();
@@ -45,4 +45,16 @@ export class MoviesListComponent implements OnInit {
       this.movieData = response;
     });
   };
+
+  onRatingSubmit = (rating: string) => {
+    console.log('kyle thinks');
+
+    this.moviesService.getAverageRating(rating).subscribe((response: any) => {
+      console.log(response);
+      this.movieData = response;
+    });
+  };
+
+
+
 }
