@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { MoviesService } from '../movies.service'
 
 @Component({
   selector: 'app-movie-card',
@@ -7,13 +8,30 @@ import { Component, Input, OnInit } from '@angular/core'
 })
 export class MovieCardComponent implements OnInit {
   @Input() movieRef: any
+  @Input() watchListRef: any = [];
+  @Output() watchListEvent = new EventEmitter<any>()
   displayDetails: boolean = false
 
-  constructor() {}
+  constructor(private moviesService: MoviesService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   toggleCard = () => {
     this.displayDetails = !this.displayDetails
   }
+
+
+  emitWatchListEvent = (movie: any): void => {
+    this.watchListEvent.emit(movie);
+
+  }
+
+  checkWatchList = (movie: any): boolean => {
+    return this.watchListRef.some((item) => {
+      return item.id === movie.id;
+    })
+  }
+
 }

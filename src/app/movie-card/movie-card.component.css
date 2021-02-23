@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.watchLater {
+  background-color: red;
+}
+
+
 .movie-card {
   margin-top: 1em;
   display: flex;
