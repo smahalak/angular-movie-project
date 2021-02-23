@@ -23,21 +23,20 @@
   <button>submit</button>
 </form>
 
-<form 
-#ratingForm="ngForm"
+<form
+  #ratingForm="ngForm"
   (ngSubmit)="emitAverage(ratingForm)"
-  class="form-container">
+  class="form-container"
+>
   <label for="rating">Rating</label>
 
   <select name="rating" id="rating" ngModel>
     <option value=""></option>
-    <option value="7.2">⭐⭐⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="1">⭐</option>
-
-
+    <option value="8">⭐⭐⭐⭐⭐</option>
+    <option value="7">⭐⭐⭐⭐</option>
+    <option value="6">⭐⭐⭐</option>
+    <option value="5">⭐⭐</option>
+    <option value="0">⭐</option>
   </select>
 
   <button>Submit</button>

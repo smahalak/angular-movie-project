@@ -1,60 +1,36 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { MoviesService } from '../movies.service';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { NgForm } from '@angular/forms'
+import { MoviesService } from '../movies.service'
 @Component({
   selector: 'app-search-criteria',
   templateUrl: './search-criteria.component.html',
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
-  @Output() searchEvent = new EventEmitter<string>();
-  @Output() genreEvent = new EventEmitter<string>();
-  @Output() ratingEvent = new EventEmitter<string>();
-  genres: any = [];
-  ratings: any = [];
-
-  constructor(private moviesService: MoviesService) { }
-
+  @Output() searchEvent = new EventEmitter<string>()
+  @Output() genreEvent = new EventEmitter<string>()
+  @Output() ratingEvent = new EventEmitter<string>()
+  genres: any = []
+  constructor(private moviesService: MoviesService) {}
   ngOnInit(): void {
-    this.getGenres();
-
+    this.getGenres()
   }
-
   emitSearchTerm = (form: NgForm) => {
-    console.log(form);
-    this.searchEvent.emit(form.form.value.searchTerm);
-  };
-
+    console.log(form)
+    this.searchEvent.emit(form.form.value.searchTerm)
+  }
   getGenres = () => {
     this.moviesService.getGenresService().subscribe((response) => {
-      this.genres = response;
-      console.log(response);
-    });
-  };
-
+      this.genres = response
+      console.log(response)
+    })
+  }
   emitGenre = (form: NgForm) => {
-    console.log(form.form.value.genre);
-    this.genreEvent.emit(form.form.value.genre);
-  };
-
-
-
-  // getAverages = (ratings: string) => {
-  //   console.log('different');
-
-  //   this.moviesService.getAverageRating(ratings).subscribe((response) => {
-  //     this.ratings = response;
-
-  //   });
-  // };
-
-
+    console.log(form.form.value.genre)
+    this.genreEvent.emit(form.form.value.genre)
+  }
   emitAverage = (form: NgForm) => {
-    console.log(form.form.value.rating);
-    this.genreEvent.emit(form.form.value.rating);
-  };
-
-
-
+    console.log(form.form.value.rating)
+    this.ratingEvent.emit(form.form.value.rating)
+  }
 }

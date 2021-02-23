@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-
 .movie-card {
   margin-top: 1em;
   display: flex;
+
   /* flex-direction: column; */
   /* justify-content: center; */
   /* align-items: center; */
@@ -18,12 +18,12 @@
   margin-top: 25px;
   height: 300px;
   max-width: 100%;
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .movie-title {
   text-align: center;
-  margin: .5em 0;
+  margin: 0.5em 0;
   color: magenta;
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
 }
@@ -33,8 +33,18 @@
   /* width: 12em; */
 }
 
+.hidden {
+  display: none;
+}
 
+.details-container {
+  color: red;
+  background-color: black;
+}
 
+.details-title {
+  text-decoration: underline;
+}
 
 .details-btn {
   /* margin-top: 10px; */
@@ -48,7 +58,7 @@
   cursor: pointer;
   border: 0;
   border-radius: 100vw;
-  padding: .4em .9em;
+  padding: 0.4em 0.9em;
   font-weight: bold;
 }
 
@@ -61,7 +71,7 @@
 }
 
 .poster-container:hover .front {
-  transform: translateY(-15%) scale(.9);  /*shifts poster up*/
+  transform: translateY(-15%) scale(0.9); /*shifts poster up*/
 }
 
 .background {
@@ -74,60 +84,56 @@
   z-index: -1;
   /* transform: scale(.2, .5);       */
   border-radius: 1em;
-  opacity: 0;   
+  opacity: 0;
 }
 
 .poster-container:hover .background {
-  transform: scale(1.2, .85);   
+  transform: scale(1.2, 0.85);
   opacity: 1;
-  transition: transform 275ms ease-in-out,
-   opacity 100ms later; 
+  transition: transform 275ms ease-in-out, opacity 100ms later;
 }
 
 .poster-container:hover .movie-title {
   animation: titleAnimation 275ms forwards;
-  
 }
 
 @keyframes titleAnimation {
   0% {
-      text-align: left;
-      opacity: 1;
+    text-align: left;
+    opacity: 1;
   }
-   
+
   20% {
-      text-align: left;
-      opacity: 0;
+    text-align: left;
+    opacity: 0;
   }
 
   50% {
-      text-align: center;
-      opacity: 0;
-      transform: scale(.8);
-      margin: 0;
-  } 
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    margin: 0;
+  }
 
   100% {
-      text-align: center;
-      opacity: 1;
-      transform: scale(.8);
-      margin: 0;
+    text-align: center;
+    opacity: 1;
+    transform: scale(0.8);
+    margin: 0;
   }
 }
-
 
 .poster-container .heart {
   position: absolute;
   color: white;
   z-index: 2;
-  bottom: .2em;
-  right: .5em;
+  bottom: 0.2em;
+  right: 0.5em;
   /* background-color: rgba(0, 0, 0, .7); */
-  padding: .5em;
+  padding: 0.5em;
   /* clip-path: polygon(100% 0%, 100% 100%, 50% 75%, 0 100%, 0 0); */
   /* transition: transform 100ms ease-in-out;  */
 }
-
 
 .poster-container:hover .back {
   opacity: 1;
@@ -135,8 +141,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;    
-  flex-direction: column;   /*centering the btn*/
+  display: flex;
+  flex-direction: column; /*centering the btn*/
   align-items: center;
   margin: 2.3em 0;
 }
