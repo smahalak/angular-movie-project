@@ -1,10 +1,24 @@
+
 <div class="movie-card">
-  <img
-    class="movie-poster"
-    src="https://image.tmdb.org/t/p/w500{{ movieRef.poster_path }}"
-    alt=""
-  />
-  <p class="movie-title">
-    {{ movieRef.title }} <button class="details-btn">See Details</button>
-  </p>
-</div>
+
+  <div class="poster-container">
+  
+        <div class="front">
+  
+          <img class="movie-poster"
+          src="https://image.tmdb.org/t/p/w500{{ movieRef.poster_path }}"
+          alt="movie poster" />
+        <p class="movie-title"> {{ movieRef.title }} </p>
+           
+      
+        </div>
+
+        <div class="back">
+            <button class="details-btn">See Details</button>
+            <i class="fas fa-heart heart"></i>
+        </div>
+  
+        <div class="background"></div>
+  
+   </div>
+ </div>
