@@ -10,20 +10,20 @@ import { MoviesService } from '../movies.service';
 export class SearchCriteriaComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
   @Output() genreEvent = new EventEmitter<string>();
+  @Output() ratingEvent = new EventEmitter<string>();
   genres: any = [];
+  ratings: any = [];
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
     this.getGenres();
+
   }
 
   emitSearchTerm = (form: NgForm) => {
     console.log(form);
-
     this.searchEvent.emit(form.form.value.searchTerm);
-    // this.searchEvent.emit(form.form.value.genre)
-    // this.searchEvent.emit(form.form.value.rating)
   };
 
   getGenres = () => {
@@ -37,4 +37,24 @@ export class SearchCriteriaComponent implements OnInit {
     console.log(form.form.value.genre);
     this.genreEvent.emit(form.form.value.genre);
   };
+
+
+
+  // getAverages = (ratings: string) => {
+  //   console.log('different');
+
+  //   this.moviesService.getAverageRating(ratings).subscribe((response) => {
+  //     this.ratings = response;
+
+  //   });
+  // };
+
+
+  emitAverage = (form: NgForm) => {
+    console.log(form.form.value.rating);
+    this.genreEvent.emit(form.form.value.rating);
+  };
+
+
+
 }

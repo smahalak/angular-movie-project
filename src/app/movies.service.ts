@@ -14,7 +14,7 @@ export class MoviesService {
 
   discoverURL: string = 'https://api.themoviedb.org/3/discover/movie';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPopularMovies = () => {
     return this.http.get(this.movieBaseUrl, {
@@ -45,4 +45,16 @@ export class MoviesService {
       params: { api_key: this.apiKey, with_genres: genre },
     });
   };
+
+
+  getAverageRating = (rating: string): any => {
+    return this.http.get(this.discoverURL, {
+      params: { api_key: this.apiKey, vote_average: rating },
+    });
+  };
+
+
+
+
+
 }
