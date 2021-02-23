@@ -7,9 +7,11 @@ import { MoviesService } from '../movies.service'
 })
 export class MoviesListComponent implements OnInit {
   movieData: any
-  constructor(private moviesService: MoviesService) {}
+  watchList: any = []
+  constructor(private moviesService: MoviesService) { }
   ngOnInit(): void {
     this.getPopular()
+    this.getAndSetWatchList();
   }
   getPopular = (): void => {
     this.moviesService.getPopularMovies().subscribe((response: any) => {
@@ -37,4 +39,16 @@ export class MoviesListComponent implements OnInit {
       this.movieData = response
     })
   }
+
+
+  onWatch = (movie: any): void => {
+    this.moviesService.toggleWatchList(movie);
+    this.getAndSetWatchList();
+  }
+
+  getAndSetWatchList = (): void => {
+    this.watchList = this.moviesService.getWatchList();
+  }
+
+
 }

@@ -9,7 +9,12 @@ export class MoviesService {
   searchMovieURL: string = 'https://api.themoviedb.org/3/search/movie'
   genreURL: string = 'https://api.themoviedb.org/3/genre/movie/list'
   discoverURL: string = 'https://api.themoviedb.org/3/discover/movie'
-  constructor(private http: HttpClient) {}
+
+
+  watchList: any[] = [];
+
+
+  constructor(private http: HttpClient) { }
   getPopularMovies = () => {
     return this.http.get(this.movieBaseUrl, {
       params: { api_key: this.apiKey },
@@ -41,4 +46,30 @@ export class MoviesService {
       params: { api_key: this.apiKey, 'vote_average.gte': rating },
     })
   }
+
+
+
+
+
+  getWatchList = (): any => {
+    return this.watchList;
+  }
+
+
+  toggleWatchList = (movie: any) => {
+    let index = this.watchList.findIndex((item) => {
+      return item.id === movie.id;
+    });
+    if (index === -1) {
+      this.watchList.push(movie);
+    } else {
+      this.watchList.splice(index, 1);
+    }
+
+
+    console.log(this.watchList);
+  }
+
+
+
 }
