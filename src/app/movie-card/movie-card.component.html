@@ -10,9 +10,13 @@
     </div>
 
     <div *ngIf="displayDetails === false" class="back">
-      <button class="details-btn" (click)="toggleCard()" >See Details</button>
-      
-      <i class="fas fa-heart heart"  (click)="emitWatchListEvent(movieRef)" [ngClass]="{watchLater: checkWatchList(movieRef)}"></i>
+      <button class="details-btn" (click)="toggleCard()">See Details</button>
+
+      <i
+        class="fas fa-heart heart"
+        (click)="emitWatchListEvent(movieRef)"
+        [ngClass]="{ watchLater: checkWatchList(movieRef) }"
+      ></i>
     </div>
 
     <div class="background"></div>
