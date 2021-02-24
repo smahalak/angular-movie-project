@@ -1,13 +1,17 @@
+<app-header></app-header>
 <app-search-criteria
   (searchEvent)="onSubmit($event)"
   (genreEvent)="onGenreSearch($event)"
   (ratingEvent)="onRatingSubmit($event)"
 ></app-search-criteria>
-
+<p class="watchlist-instructions">
+  Click the heart to add/remove from watchlist
+</p>
 <ul class="card-container">
   <app-movie-card
     *ngFor="let movie of movieData?.results; index as i"
-    [movieRef]="movie" (watchListEvent)="onWatch($event)" 
+    [movieRef]="movie"
+    (watchListEvent)="onWatch($event)"
     [watchListRef]="watchList"
   ></app-movie-card>
 </ul>

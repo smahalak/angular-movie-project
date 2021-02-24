@@ -1,30 +1,10 @@
-/* .card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.watchlist-instructions {
+  text-align: center;
+  color: magenta;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 15px;
+  margin-bottom: 15px;
   background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-  margin: 20px;
-} */
-
-/* 
- possible scrollable div for desktop
-
-.card-container {
-  height: 440px;
-  width: 415px;
-  overflow-y: auto;
-  float: left;
-  position: relative;
-  margin-left: -5px;
-} */
-
-/* @media (min-width: 780px) {
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
-    margin: 0;
-  }
-} */
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+}

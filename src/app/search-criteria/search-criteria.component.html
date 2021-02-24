@@ -1,25 +1,35 @@
 <div class="form-container">
-  <form #searchForm="ngForm" (ngSubmit)="emitSearchTerm(searchForm)">
+  <form
+    #searchForm="ngForm"
+    (ngSubmit)="emitSearchTerm(searchForm)"
+    class="form"
+  >
     <label for="searchTerm"></label>Search:
-    <input type="text" name="searchTerm" id="searchTerm" ngModel />
-    <button>submit</button>
+    <input
+      type="text"
+      name="searchTerm"
+      id="searchTerm"
+      class="input"
+      ngModel
+    />
+    <button class="button">Submit</button>
   </form>
 
-  <form #genreForm="ngForm" (ngSubmit)="emitGenre(genreForm)">
-    <label for="genre">Genre</label>
+  <form #genreForm="ngForm" (ngSubmit)="emitGenre(genreForm)" class="form">
+    <label for="genre">Genre: &nbsp;</label>
 
-    <select name="genre" id="genre" ngModel>
+    <select name="genre" id="genre" class="select" ngModel>
       <option *ngFor="let genre of genres?.genres" value="{{ genre.id }}">
         {{ genre.name }}
       </option>
     </select>
-    <button>submit</button>
+    <button class="button">Submit</button>
   </form>
 
-  <form #ratingForm="ngForm" (ngSubmit)="emitAverage(ratingForm)">
-    <label for="rating">Rating</label>
+  <form #ratingForm="ngForm" (ngSubmit)="emitAverage(ratingForm)" class="form">
+    <label for="rating">Rating: </label>
 
-    <select name="rating" id="rating" ngModel>
+    <select name="rating" id="rating" class="select" ngModel>
       <option value=""></option>
       <option value="8">⭐⭐⭐⭐⭐</option>
       <option value="7">⭐⭐⭐⭐</option>
@@ -28,6 +38,6 @@
       <option value="0">⭐</option>
     </select>
 
-    <button>Submit</button>
+    <button class="button">Submit</button>
   </form>
 </div>
