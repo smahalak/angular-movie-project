@@ -10,10 +10,57 @@
   font-size: 0.8rem;
 }
 
+.input {
+  max-width: 60px;
+  max-height: 15px;
+}
+.select {
+  max-width: 63px;
+}
+
+.button {
+  margin-left: 2px;
+  margin-bottom: 3px;
+  padding: 0px 2px;
+  border-radius: 4px;
+}
+
+.button:hover {
+  color: magenta;
+}
+
+.form {
+  justify-content: space-around;
+}
+
 @media only screen and (min-width: 768px) {
+  .input {
+    max-width: 100px;
+    max-height: 15px;
+  }
+  .select {
+    max-width: 103px;
+  }
+
   .form-container {
-    position: absolute;
-    top: 7.3%;
-    margin-left: 38.5%;
+    margin: 10px 250px;
   }
 }
+
+/* 
+@media only screen and (min-width: 769px) {
+  .form-container {
+    position: absolute;
+    top: 18.5%;
+    width: 200px;
+    margin-left: 35.5%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .form-container {
+    margin-left: 36%;
+    position: absolute;
+    width: 200px;
+  }
+} */

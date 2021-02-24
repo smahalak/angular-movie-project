@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body,
+h1,
 a,
 header,
 ul,
@@ -28,11 +29,15 @@ body {
   margin: 20px;
 }
 
+button:focus {
+  outline: 0;
+}
+
 @media (min-width: 780px) {
   .card-container {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: space-between;
+    justify-content: space-around;
+    align-items: space-around;
     flex-wrap: wrap;
     margin: 0;
   }

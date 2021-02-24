@@ -23,9 +23,11 @@
   </div>
   <div *ngIf="displayDetails === true" class="details-container">
     <p class="details-title">{{ movieRef.title }}</p>
-    <p>Summary:{{ movieRef.overview }}</p>
-    <p>Release Date:{{ movieRef.release_date }}</p>
-    <p>Rating:{{ movieRef.vote_average }}</p>
-    <button (click)="toggleCard()">Close Details</button>
+    <p><span class="underline">Summary:</span> {{ movieRef.overview }}</p>
+    <p>
+      <span class="underline">Release Date:</span> {{ movieRef.release_date }}
+    </p>
+    <p><span class="underline">Rating:</span> {{ movieRef.vote_average }}</p>
+    <button (click)="toggleCard()" class="close-btn">Close Details</button>
   </div>
 </div>

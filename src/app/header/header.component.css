@@ -8,30 +8,89 @@
   background-size: cover;
 }
 
-.header-btn {
+.header-btns {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 38%;
-  /* background-color: lime;
-  border: 2px solid yellow;
-  color: magenta; */
-  border: 1px solid gray;
+  /* margin: 36%; */
   border-radius: 5px;
   background-color: rgba(228, 233, 237, 0.8);
+}
+
+.title-btn,
+.watchlist-btn {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.title-btn:hover,
+.watchlist-btn:hover {
+  color: magenta;
+}
+
+.watchlist-btn {
+  text-decoration: underline;
 }
 
 .hidden {
   display: none;
 }
 
+@media only screen and (min-width: 280px) {
+  .header-btns {
+    margin-left: 40%;
+    margin-right: 26%;
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  .header-btns {
+    margin: 35%;
+    margin-top: 26%;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .header-btns {
+    margin: 36%;
+    margin-top: 32%;
+  }
+}
+
+@media only screen and (min-width: 411px) {
+  .header-btns {
+    margin: 36%;
+    margin-top: 37%;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .header-btns {
+    margin: 36%;
+    margin-top: 44%;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .header-btns {
+    margin: 36%;
+    margin-top: 44%;
+  }
+}
+
 @media only screen and (min-width: 768px) {
+  .header-btns {
+    margin-bottom: 35%;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
   .header {
     height: 350px;
   }
-
-  .header-btn {
-    margin-top: 15%;
-    z-index: 1;
+  .header-btns {
+    margin-bottom: 35%;
   }
 }
